@@ -1,5 +1,5 @@
 class Api::V1::ChatsController < ApplicationController
-  before_action :set_chat, only: %i[ show update destroy ]
+  before_action :set_chat, only: %i[show update destroy]
 
   # GET /chats
   def index
@@ -39,13 +39,14 @@ class Api::V1::ChatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_chat
-      @chat = Chat.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def chat_params
-      params.require(:chat).permit(:greeting)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_chat
+    @chat = Chat.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def chat_params
+    params.require(:chat).permit(:greeting)
+  end
 end
