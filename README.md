@@ -23,7 +23,7 @@ password: your_postgres_database_password
 Finally run
 
 ```
-rails db:create db:migrate
+rails db:create db:migrate db:seed
 
 rails s
 
